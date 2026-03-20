@@ -5,7 +5,7 @@ const cors = require('cors');
 
 const app = express();
 const PORT = 3000;
-const SECRET_KEY = 'your-very-secure-secret';
+const SECRET_KEY = 'gel119870';
 
 app.use(cors({
   origin: ['http://127.0.0.1:5500', 'http://localhost:5500']
@@ -16,7 +16,7 @@ app.use(express.json());
 // In-memory "database"
 let users = [];
 
-// Pre-hash known passwords for demo
+// Pre-hash passwords for demo
 users.push({ id: 1, username: 'admin', password: bcrypt.hashSync('admin123', 10), role: 'admin' });
 users.push({ id: 2, username: 'alice', password: bcrypt.hashSync('user123', 10), role: 'user' });
 
@@ -83,7 +83,7 @@ function authenticateToken(req, res, next) {
 function authorizeRole(role) {
   return (req, res, next) => {
     if (req.user.role !== role) {
-      return res.status(403).json({ error: 'Access denied: insufficient permissions' });
+      return res.status(403).json({ error: 'Access denied: Access token required' });
     }
     next();
   };
@@ -93,7 +93,7 @@ function authorizeRole(role) {
 app.listen(PORT, () => {
   console.log(`Backend running on http://localhost:${PORT}`);
   console.log('Try logging in with:');
-  console.log('  - Admin: username=admin, password=admin123');
-  console.log('  - User:  username=alice, password=user123');
+  console.log('  - Admin: email = admin@gmail.com, password = admin123');
+  console.log('  - User:  email = alice@gmail.com, password = user123');
 });
 

@@ -1,0 +1,191 @@
+/* =========================
+   GLOBAL
+========================= */
+
+:root {
+  --blue:  #3b82f6;
+  --green: #10b981;
+  --red:   #ef4444;
+  --bg:    linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+body {
+  background: var(--bg);
+  font-family: "Inter", "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+
+/* =========================
+   PAGE VISIBILITY
+   (exact rules from the guide)
+========================= */
+
+.page { display: none; }
+.page.active { display: block; }
+
+body.not-authenticated .role-logged-in  { display: none; }
+body.authenticated     .role-logged-out { display: none; }
+
+.role-admin { display: none; }
+body.is-admin .role-admin { display: block; }
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  background: linear-gradient(90deg, #1e293b, #0f172a);
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.nav-link {
+  color: #e2e8f0 !important;
+  font-weight: 500;
+  margin-right: 8px;
+  transition: color 0.2s;
+}
+
+.nav-link:hover { color: #fff !important; }
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+  background: #fff;
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+}
+
+/* =========================
+   FORM BOX
+========================= */
+
+.form-box {
+  max-width: 450px;
+  margin: auto;
+  padding: 2.5rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+}
+
+.form-control,
+.form-select {
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-primary {
+  background-color: var(--blue);
+  border: none;
+  border-radius: 12px;
+  padding: 0.6rem 1.2rem;
+}
+
+.btn-primary:hover { background-color: #2563eb; }
+
+.btn-success {
+  background-color: var(--green);
+  border: none;
+  border-radius: 12px;
+}
+
+.btn-outline-secondary,
+.btn-outline-primary,
+.btn-outline-danger,
+.btn-outline-warning {
+  border-radius: 10px;
+}
+
+/* =========================
+   TABLES
+========================= */
+
+.table {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.table thead.table-dark th {
+  background-color: #1e293b;
+  border: none;
+  padding: 0.9rem 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.table tbody tr:hover { background-color: #f1f5f9; }
+
+.table td {
+  padding: 0.85rem 1rem;
+  vertical-align: middle;
+}
+
+/* =========================
+   SIDE FORM (inline CRUD forms)
+========================= */
+
+.side-form { border-left: 4px solid var(--blue); }
+
+/* =========================
+   POPUP (Bootstrap modal internals)
+========================= */
+
+.modal-content {
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+}
+
+.modal-header { border-bottom: 1px solid #e2e8f0; padding: 1.25rem 1.5rem; }
+.modal-footer { border-top:    1px solid #e2e8f0; padding: 1rem 1.5rem; }
+
+/* =========================
+   BADGES
+========================= */
+
+.badge {
+  font-size: 0.78rem;
+  padding: 0.4em 0.75em;
+  border-radius: 8px;
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.dropdown-menu {
+  border-radius: 14px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   MISC
+========================= */
+
+.text-danger { font-size: 0.9rem; }
+
+#home-page .card { padding: 3rem; }
+
+.item-row input { border-radius: 10px; }
